@@ -2,6 +2,7 @@
 @import 'global';
 @import 'header';
 @import 'footer';
+@import 'gallery';
 
   
 .blackbox {
@@ -70,7 +71,7 @@
            /* TARJETAS / CARD */
 
 .container {
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto ;
 }
   
@@ -216,7 +217,7 @@
 /* NOSOTROS */
 .nosotros {
   width: 100x;
-  height: 100vh;
+  height: 70vh;
   background-color:$Gray131;
   display: flex;
   justify-content: center;
@@ -247,6 +248,75 @@
   padding: 0 10px;
   color: white;
 }
+
+
+          // GALERIA
+
+.galcontainer-all{
+    width: 1200px;
+    margin: 20px auto;
+    height: auto;
+  }
+  .galcontainer{
+    width: 280px;
+    overflow:hidden;
+    height: fit-content;
+    margin: 10px;
+    padding: 0;
+    display:block;
+    position:relative;
+    float:left;
+    
+    &:hover img{
+      transform: scale(1.2);
+      transition-duration: .3s;
+      filter: grayscale(10%);
+      opacity: .7;
+    }
+    &:hover span{
+      color:white;
+      display: block;
+      transition-duration: .3s;
+    }
+
+    & img{
+        width: 280px;
+        transition-duration: 0.3s;
+        max-width: 100%;
+        display:block;
+        overflow:hidden;
+        cursor:pointer;
+      }
+    
+  }
+  .galtitle{
+    position:absolute;
+    display:block;
+    cursor:pointer;
+    top: 120px;
+    display: none;
+    left: 150px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 1px 5px 10px black;
+    transition-duration: .3s;
+  }
+  .galtext{
+    position:absolute;
+    top: 70%;
+    cursor:pointer;
+    width: 260px;
+    text-align:center;
+    left: 140px;
+    text-shadow: 1px 5px 10px black;
+    font-size: 13px;
+    display:none;
+    transition-duration: .3s;
+    transform: translate(-50%, -50%) 
+  }
+
 
 
             /* MEDIA QUERIES */
@@ -312,6 +382,14 @@
     display: block;
     text-align: left;
   }
+
+  .galcontainer-all{
+    width: 1000px;
+    margin: 20px 65px;
+    height: auto;
+  }
+
+
 
   }
     
@@ -407,6 +485,11 @@
    display: block;
    text-align: left;
  }
+ .galcontainer-all{
+  width: 650px;
+  margin: 20px 90px;
+  height: auto;
+}
 
     
     
@@ -477,7 +560,14 @@
     text-align: left;
   }
 
-}
+  .galcontainer-all{
+    width: 300px;
+    margin: 20px 60px;
+    height: auto;
+  }
+  }
+
+
     
     @media screen and (max-width: 375px) {
 
@@ -558,9 +648,14 @@
       display: block;
       text-align: left;
     }
+
+    .galcontainer-all{
+      width: 300px;
+      margin: 20px 40px;
+      height: auto;
+    }
+  
   
     
       
     }
-    
-    
